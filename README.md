@@ -10,3 +10,4 @@ this VBS file  could help you connect chia node automatically , and every hour i
 
 下载后双击start.bat即可，程序自动找到chia客户端并每小时循环连接优质节点。运行中勿关闭窗口，否则停止更新节点。更新的节点可直接在Chia客户端上查看，无需重启Chia客户端，实时同步。
 
+VBS脚本可随意更改，如遇到杀毒误报无视即可。
