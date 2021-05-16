@@ -1,15 +1,15 @@
-'''On   Error   Resume   Next
+On   Error   Resume   Next
 wscript.echo  vbcrlf + vbcrlf + vbcrlf
 wscript.echo "**************************************************************************************"
-wscript.echo "æœ¬å·¥å…·æ—¨åœ¨å…è´¹æä¾›ç»™å¤§å®¶æ›´å¤šæ›´å¥½çš„Chiaä¼˜è´¨æ›´æ–°èŠ‚ç‚¹ï¼Œå¥½çš„èŠ‚ç‚¹ç¦»ä¸å¼€å¤§å®¶çš„æä¾›ã€‚ è¯·å¤šå¤šæ”¯æŒã€‚"
-wscript.echo "æ›´å¤šä¼˜è´¨èŠ‚ç‚¹è¯·æäº¤ç»™ https://github.com/chiaprofessor/chianode "
-wscript.echo "ç¨‹åºè¿è¡Œæ—¶åˆ‡å‹¿å…³é—­æ­¤çª—å£ï¼Œæ¯ä¸€ä¸ªå°æ—¶åŒæ­¥ä¸€æ¬¡èŠ‚ç‚¹ï¼Œä¿è¯å®¢æˆ·ç«¯24å°æ—¶ä¸æ‰çº¿ã€‚"
+wscript.echo "±¾¹¤¾ßÖ¼ÔÚÃâ·ÑÌá¹©¸ø´ó¼Ò¸ü¶à¸üºÃµÄChiaÓÅÖÊ¸üĞÂ½Úµã£¬ºÃµÄ½ÚµãÀë²»¿ª´ó¼ÒµÄÌá¹©¡£ Çë¶à¶àÖ§³Ö¡£"
+wscript.echo "¸ü¶àÓÅÖÊ½ÚµãÇëÌá½»¸ø https://github.com/chiaprofessor/chianode "
+wscript.echo "³ÌĞòÔËĞĞÊ±ÇĞÎğ¹Ø±Õ´Ë´°¿Ú£¬Ã¿Ò»¸öĞ¡Ê±Í¬²½Ò»´Î½Úµã£¬±£Ö¤¿Í»§¶Ë24Ğ¡Ê±²»µôÏß¡£"
 wscript.echo "**************************************************************************************"
 wscript.echo  vbcrlf + vbcrlf + vbcrlf
 
-''' 1. è·å–chiaç›®å½•å®˜æ–¹ç¨‹åºè·¯å¾„
+''' 1. »ñÈ¡chiaÄ¿Â¼¹Ù·½³ÌĞòÂ·¾¶
 
-chia_exe = ""    ''' é»˜è®¤è‡ªåŠ¨æŸ¥æ‰¾Chiaæ–‡ä»¶ï¼Œä¹Ÿå¯ä»¥æ ¹æ®è‡ªå·±ç”µè„‘è‡ªå®šä¹‰ï¼Œæ¯”å¦‚:C:\Users\Talent\AppData\Local\chia-blockchain\app-1.1.5\resources\app.asar.unpacked\daemon\chia.exe
+chia_exe = ""    ''' Ä¬ÈÏ×Ô¶¯²éÕÒChiaÎÄ¼ş£¬Ò²¿ÉÒÔ¸ù¾İ×Ô¼ºµçÄÔ×Ô¶¨Òå£¬±ÈÈç:C:\Users\Talent\AppData\Local\chia-blockchain\app-1.1.5\resources\app.asar.unpacked\daemon\chia.exe
 
 Set myws = CreateObject("WScript.Shell")
 Set fso=CreateObject("Scripting.FileSystemObject") 
@@ -17,45 +17,45 @@ Set fso=CreateObject("Scripting.FileSystemObject")
 If chia_exe = ""  Then
 	chia_exe = GET_CHIA_REG()
 	If fso.fileExists(chia_exe) Then
-		wscript.echo "å·²é€šè¿‡æ³¨å†Œè¡¨æ‰¾åˆ°Chiaå®¢æˆ·ç«¯ï¼š" + vbcrlf + chia_exe
+		wscript.echo "ÒÑÍ¨¹ı×¢²á±íÕÒµ½Chia¿Í»§¶Ë£º" + vbcrlf + chia_exe
 	Else
 		chia_exe = GET_CHIA_APPDATA()
 			If fso.fileExists(chia_exe) Then
-				wscript.echo "å·²é€šè¿‡ç”¨æˆ·ç›®å½•éå†æ–¹å¼æ‰¾åˆ°Chiaå®¢æˆ·ç«¯ï¼š" + vbcrlf + chia_exe
+				wscript.echo "ÒÑÍ¨¹ıÓÃ»§Ä¿Â¼±éÀú·½Ê½ÕÒµ½Chia¿Í»§¶Ë£º" + vbcrlf + chia_exe
 			Else
-				wscript.echo "æœªæ‰¾åˆ°Chiaå®¢æˆ·ç«¯ï¼Œè¯·æ‰‹åŠ¨ä¿®æ”¹chia_exeå‚æ•°è¿›è¡Œé…ç½®ã€‚"
+				wscript.echo "Î´ÕÒµ½Chia¿Í»§¶Ë£¬ÇëÊÖ¶¯ĞŞ¸Ächia_exe²ÎÊı½øĞĞÅäÖÃ¡£"
 			End If
 	End If
 	
 	
 Else
-	wscript.echo  "å·²ä½¿ç”¨è‡ªå®šä¹‰Chiaè·¯å¾„: " + vbcrlf + chia_exe
+	wscript.echo  "ÒÑÊ¹ÓÃ×Ô¶¨ÒåChiaÂ·¾¶: " + vbcrlf + chia_exe
 
 End If
 wscript.echo  vbcrlf + vbcrlf
 
-''' 2. è·å–å½“å‰çš„æ´»è·ƒèŠ‚ç‚¹åˆ—è¡¨
+''' 2. »ñÈ¡µ±Ç°µÄ»îÔ¾½ÚµãÁĞ±í
 
 Dim Nodes
-wscript.echo vbcrlf + "å¼€å§‹å¯»æ‰¾æ´»è·ƒæ›´æ–°èŠ‚ç‚¹..." 
+wscript.echo vbcrlf + "¿ªÊ¼Ñ°ÕÒ»îÔ¾¸üĞÂ½Úµã..." 
 wscript.echo  vbcrlf + vbcrlf + vbcrlf
 Nodes = NodeList("http://158.247.225.94/node/")
 '''wscript.echo Nodes
 Nodearr=split(Nodes,vbCrLf)
 Nodenum = Ubound(Nodearr)
-wscript.echo vbcrlf + "å·²æ‰¾åˆ° " +cstr(Nodenum)+" ä¸ªé«˜é€ŸèŠ‚ç‚¹."
+wscript.echo vbcrlf + "ÒÑÕÒµ½ " +cstr(Nodenum)+" ¸ö¸ßËÙ½Úµã."
 wscript.echo  vbcrlf + vbcrlf + vbcrlf
 
 
 
 
-''' 3. æ¯ä¸€ä¸ªå°æ—¶å¾ªç¯è¿æ¥èŠ‚ç‚¹
+''' 3. Ã¿Ò»¸öĞ¡Ê±Ñ­»·Á¬½Ó½Úµã
 
 do
 
-wscript.echo vbcrlf + "å¼€å§‹è¿æ¥é«˜é€ŸèŠ‚ç‚¹..." +vbcrlf
+wscript.echo vbcrlf + "¿ªÊ¼Á¬½Ó¸ßËÙ½Úµã..." +vbcrlf
 	For i=0 to Nodenum-1
-		wscript.echo "å¼€å§‹è¿æ¥ç¬¬ " + cstr(cint(i+1)) +" ä¸ªèŠ‚ç‚¹ :  " +vbcrlf
+		wscript.echo "¿ªÊ¼Á¬½ÓµÚ " + cstr(cint(i+1)) +" ¸ö½Úµã :  " +vbcrlf
 		Set nodestart = CreateObject("WScript.Shell")
 		chia_dir=fso.GetParentFolderName(chia_exe)
 		nodestart.CurrentDirectory = chia_dir
@@ -66,7 +66,7 @@ wscript.echo vbcrlf + "å¼€å§‹è¿æ¥é«˜é€ŸèŠ‚ç‚¹..." +vbcrlf
 
 	Next
 	wscript.echo vbcrlf +  vbcrlf + vbcrlf
-	wscript.echo "æ›´æ–°å®Œæ¯•ï¼Œå‹¿å…³é—­çª—å£ ã€‚ ä¸‹ä¸ªå°æ—¶è‡ªåŠ¨å¾ªç¯æ›´æ–°ã€‚"
+	wscript.echo "¸üĞÂÍê±Ï£¬Îğ¹Ø±Õ´°¿Ú ¡£ ÏÂ¸öĞ¡Ê±×Ô¶¯Ñ­»·¸üĞÂ¡£"
 wscript.sleep 3600000
 loop
 
